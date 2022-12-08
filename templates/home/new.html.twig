@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+{% form_theme form 'bootstrap_4_layout.html.twig' %}
+
+{% block title %}Hello HomeController!{% endblock %}
+
+{% block body %}
+
+
+<div class="container">
+    <h1>Hello {{ controller_name }}! ✅</h1>
+
+    
+</div>
+
+
+<div class="container mt-4">
+    {{form_start(form)}}
+     <div class="row">
+        <div class='col-md-6'>{{form_row(form.Name)}}</div>
+        <div class='col-md-6'>{{form_row(form.category)}}</div>  
+        <div class='col-md-2 btn bnt-secondary'>{{form_row(form.save)}}</div>     
+    </div>
+    {{form_rest(form)}}
+    {{form_end(form)}}
+
+</div>
+{% endblock %}

@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+
+{% block title %}Hello HomeController!{% endblock %}
+
+{% block body %}
+
+
+<div class="container">
+    <table>
+        <thead>
+            <tr> 
+                <th>Nom de l'article</th>
+                <th>Catégorie</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr> 
+                <td>{{ articles.Name }}!</td>
+                <td>{{articles.category}}</td>
+            </tr>
+    </tbody>
+
+    <div class='row'>
+        <form action="{{ path('article_vote', { id: articles.id }) }}" method="POST">
+            <div class="vote-arrows vote-arrows-alt flex-fill pt-2" style="min-width: 90px;">
+                <button class="vote-up btn btn-link" name="direction" value="up">up</button>
+                <button class="vote-down btn btn-link" name="direction" value="down">down</button>
+                <span>{{ articles.votesString }}</span>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+
+
+{% endblock %}
